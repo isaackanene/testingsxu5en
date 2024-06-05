@@ -16,6 +16,13 @@
             embedded
             gesture-detector
         >
+            <a-assets>
+                <a-asset-item
+                    id="animated-asset"
+                    src="assets/GEOMATICS.glb"
+                ></a-asset-item>
+            </a-assets>
+            
             <a-marker
                 id="animated-marker"
                 type="pattern"
@@ -26,13 +33,14 @@
                 cursor="fuse: false; rayOrigin: mouse;"
                 id="markerA"
             >
-                <a-asset
-                    src="assets/GEOMATICS.glb"
-                    scale="1 1 1"
+                <a-entity
+                    id="bowser-model"
+                    scale="0.7314285714285714 0.7314285714285714 0.7314285714285714"
+                    animation-mixer="loop: repeat"
+                    gltf-model="#animated-asset"
                     class="clickable"
-                    rotation="-90 0 0"
                     gesture-handler
-                ></a-asset>
+                ></a-entity>
             </a-marker>
 
             <a-entity camera></a-entity>
